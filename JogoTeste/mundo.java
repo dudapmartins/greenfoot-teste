@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class mundo extends World
 {
-     private GreenfootSound bgMusic = new GreenfootSound("mario.mp3");
+    private GreenfootSound bgMusic = new GreenfootSound("mario.mp3");
      
     /**
      * Constructor for objects of class mundo.
@@ -21,6 +21,9 @@ public class mundo extends World
         super(800, 600, 1); 
         prepare();
     }
+    public void act(){
+        started();
+          }    
     public void started(){
     bgMusic.playLoop();
 }
@@ -33,8 +36,7 @@ public void stopped(){
      * Ou seja: criar os objetos iniciais e adicioná-los ao mundo.
      */
     private void prepare()
-    {
-
+    { 
         princesa princesa = new princesa();
         addObject(princesa,491,423);
         mario mario = new mario();
@@ -53,5 +55,15 @@ public void stopped(){
         addObject(counter,737,40);
         Counter counter2 = new Counter();
         addObject(counter2,61,34);
+        removeObject(counter);
+        removeObject(counter2);
+        addObject(counter,92,42);
+        addObject(counter2,713,48);
+        removeObject(counter2);
+        removeObject(counter);
+        addObject(counter,86,53);
+        Counter0 counter0 = new Counter0();
+        addObject(counter0,654,63);
     }
+
 }
